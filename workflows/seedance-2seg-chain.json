@@ -1,0 +1,115 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "ArkSeedanceVideo",
+      "pos": [40, 120],
+      "size": [470, 600],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "title": "第 1 段",
+      "inputs": [
+        {"name": "image_first", "type": "IMAGE", "link": null},
+        {"name": "image_last", "type": "IMAGE", "link": null},
+        {"name": "ref_image1", "type": "IMAGE", "link": null},
+        {"name": "ref_image2", "type": "IMAGE", "link": null},
+        {"name": "ref_image3", "type": "IMAGE", "link": null}
+      ],
+      "outputs": [
+        {"name": "video", "type": "VIDEO", "links": [1], "slot_index": 0},
+        {"name": "info", "type": "STRING", "links": null},
+        {"name": "last_frame", "type": "IMAGE", "links": [2], "slot_index": 2}
+      ],
+      "properties": {"Node name for S&R": "ArkSeedanceVideo"},
+      "widgets_values": [
+        "一只橘猫从木质窗台跳下地面，向前走两步，下午阳光斜射，尘埃飞舞，镜头低角度跟随",
+        "doubao-seedance-2-0-260128",
+        "文生视频",
+        "480p",
+        "16:9",
+        15,
+        false,
+        false,
+        "mp4",
+        900,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "ArkSeedanceVideo",
+      "pos": [560, 120],
+      "size": [470, 600],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "title": "第 2 段（首帧接第 1 段尾帧）",
+      "inputs": [
+        {"name": "image_first", "type": "IMAGE", "link": 2},
+        {"name": "image_last", "type": "IMAGE", "link": null},
+        {"name": "ref_image1", "type": "IMAGE", "link": null},
+        {"name": "ref_image2", "type": "IMAGE", "link": null},
+        {"name": "ref_image3", "type": "IMAGE", "link": null}
+      ],
+      "outputs": [
+        {"name": "video", "type": "VIDEO", "links": [3], "slot_index": 0},
+        {"name": "info", "type": "STRING", "links": null},
+        {"name": "last_frame", "type": "IMAGE", "links": null, "slot_index": 2}
+      ],
+      "properties": {"Node name for S&R": "ArkSeedanceVideo"},
+      "widgets_values": [
+        "橘猫继续向前走向门口的黑色帆布鞋，镜头保持低角度跟随，光线不变",
+        "doubao-seedance-2-0-260128",
+        "首帧图生视频",
+        "480p",
+        "16:9",
+        15,
+        false,
+        false,
+        "mp4",
+        900,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 3,
+      "type": "SaveVideo",
+      "pos": [1080, 120],
+      "size": [400, 460],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [{"name": "video", "type": "VIDEO", "link": 1}],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": ["seedance_part1", "mp4", "auto"]
+    },
+    {
+      "id": 4,
+      "type": "SaveVideo",
+      "pos": [1080, 640],
+      "size": [400, 460],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [{"name": "video", "type": "VIDEO", "link": 3}],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": ["seedance_part2", "mp4", "auto"]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 3, 0, "VIDEO"],
+    [2, 1, 2, 2, 0, "IMAGE"],
+    [3, 2, 0, 4, 0, "VIDEO"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

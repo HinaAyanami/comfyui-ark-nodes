@@ -1,0 +1,15 @@
+# never commit credentials
+api_key.txt
+.env
+*.key
+
+# python
+__pycache__/
+*.pyc
+
+# dev artifacts
+tools/_dev/
+
+# OS noise
+.DS_Store
+Thumbs.db

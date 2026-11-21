@@ -1,0 +1,59 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "ArkSeedanceVideo",
+      "pos": [80, 160],
+      "size": [460, 560],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {"name": "image_first", "type": "IMAGE", "link": null},
+        {"name": "image_last", "type": "IMAGE", "link": null},
+        {"name": "ref_image1", "type": "IMAGE", "link": null},
+        {"name": "ref_image2", "type": "IMAGE", "link": null},
+        {"name": "ref_image3", "type": "IMAGE", "link": null}
+      ],
+      "outputs": [
+        {"name": "video", "type": "VIDEO", "links": [1], "slot_index": 0},
+        {"name": "info", "type": "STRING", "links": null}
+      ],
+      "properties": {"Node name for S&R": "ArkSeedanceVideo"},
+      "widgets_values": [
+        "一只橘猫从窗台跳下，慢动作，阳光斜射，尘埃飞舞",
+        "doubao-seedance-2-5-260628",
+        "文生视频",
+        "480p",
+        "16:9",
+        5,
+        false,
+        false,
+        "mp4",
+        600,
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "SaveVideo",
+      "pos": [600, 160],
+      "size": [400, 460],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [{"name": "video", "type": "VIDEO", "link": 1}],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": ["seedance_video", "mp4", "auto"]
+    }
+  ],
+  "links": [[1, 1, 0, 2, 0, "VIDEO"]],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
