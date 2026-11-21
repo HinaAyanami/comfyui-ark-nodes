@@ -99,4 +99,4 @@ git clone <this-repo> ComfyUI/custom_nodes/ComfyUI-VolcengineArk
 
 ## License
 
-未指定（UNLICENSED）。接口属于火山引擎，使用时请遵守其服务条款。
+MIT（见 `LICENSE`）。接口与模型属于火山引擎，使用时请遵守其服务条款。
